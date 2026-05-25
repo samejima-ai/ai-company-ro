@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+
+# secrets — 実値は絶対にコミットしない
+.env
+.env.*
+!.env.example
+
+# local data store (SQLite)
+data/
+*.db
+*.sqlite
+
+# logs / os
+*.log
+.DS_Store
