@@ -3,13 +3,13 @@
 決定論的で高速な検証。各 1 分以内に完了する制約。L1 自己検証と layer1-independent-reviewer が参照する。
 
 ## 型チェック
-- コマンド: `pnpm run typecheck`（= `tsc --noEmit`）
+- コマンド: `pnpm run typecheck`（= `tsc -p tsconfig.json`。tsconfig は `noEmit: true`）
 - 成功条件: エラー0件
 - 対象: `src/`, `spec/`, `tests/`
 
 ## ビルド
-- コマンド: `pnpm run build`（= `tsc -p tsconfig.json`）
-- 成功条件: exit code 0、`dist/` に出力が生成
+- コマンド: `pnpm run build`（= `tsup src/index.ts --format esm --target node20 --out-dir dist`）
+- 成功条件: exit code 0、`dist/index.js` が生成
 - 制約: 1分以内
 
 ## リンター / フォーマット
